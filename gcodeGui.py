@@ -16,12 +16,13 @@ def readAllLines():
           break
       print(buff)
       
-ser = serial.Serial("com3")
+ser = serial.Serial("/dev/ttyUSB0")
 ser.baudrate = 250000
 ser.timeout = 1
 readAllLines()
 ser.write("M119\r\n".encode())
 readAllLines()
+
       
 var = tkinter.StringVar()
 label = tkinter.Label( window, textvariable=var).grid(row=5, column=2, columnspan=1)
